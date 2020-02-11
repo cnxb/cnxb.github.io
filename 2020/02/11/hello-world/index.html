@@ -22,7 +22,7 @@
 	<link rel="preconnect" href="//gravatar.loli.net">
 	<link rel="preload" href="https://pic.zhih.me/blog/header.jpg" as="image">
 
-	<title>InkbookSpi电子书实现方案 | cnxb</title>
+	<title>Hello World | cnxb</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -47,14 +47,14 @@
 
 	<meta property="og:site_name" content="cnxb">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="InkbookSpi电子书实现方案 | cnxb">
+	<meta property="og:title" content="Hello World | cnxb">
 	<meta property="og:description" content>
-	<meta property="og:url" content="https://cnxb.github.io/2019/08/28/yuque/klqkwd/">
+	<meta property="og:url" content="https://cnxb.github.io/2020/02/11/hello-world/">
 
 	
-	<meta property="article:published_time" content="2019-08-28T16:08:00+08:00"> 
+	<meta property="article:published_time" content="2020-02-11T17:02:32+08:00"> 
 	<meta property="article:author" content="cnxb">
-	<meta property="article:published_first" content="cnxb, /2019/08/28/yuque/klqkwd/">
+	<meta property="article:published_first" content="cnxb, /2020/02/11/hello-world/">
 	
 
 	
@@ -69,7 +69,7 @@ font-family:"ys";
 	
 	
 	
-<link rel="canonical" href="https://cnxb.github.io/2019/08/28/yuque/klqkwd/">
+<link rel="canonical" href="https://cnxb.github.io/2020/02/11/hello-world/">
 
 
 
@@ -144,35 +144,33 @@ font-family:"ys";
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2019-08-28T08:37:49.000Z">
-                    2019-08-28
+                <time class="post-full-meta-date" datetime="2020-02-11T09:12:51.321Z">
+                    2020-02-11
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">InkbookSpi电子书实现方案</h1>
+            <h1 class="post-full-title">Hello World</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="lightgallery" class="markdown-body">
-                    <p><a name="Vlolp"></a></p>
-<p>#<br>这是一个借助RaspberryPi SPI接口通信，基于InkScreen墨水屏，PIL文字显示的类电子书方案程序设计<br><a name="xvgSk"></a></p>
-<h2 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h2><p><a name="EmYqU"></a></p>
-<h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><p>可运行的RaspberryPi3B/4B<br>Spi墨水屏（可依靠SPI接口传输单色图像）（Waveshare）<br>按钮若干<br><a name="snbs4"></a></p>
-<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><p>1.RASPBIAN<br>2.SPI驱动<br>3.Python3<br><br><a name="heiKL"></a></p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>0.系统：RASPBIAN<br>1.装python3，处理依赖<br>2.插入墨水屏<br>3.按钮接到接口，一处接往GND<br>4.下载代码，运行，./book书籍放入<br><br><a name="vJsUi"></a></p>
-<h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2><p> <img alt="INKBOOK.png" class="post-img b-lazy" href="https://cdn.nlark.com/yuque/0/2020/png/438857/1580118107411-3464e873-2694-4e5d-93d1-7f1abdc66923.png#align=left&display=inline&height=1725&name=INKBOOK.png&originHeight=1725&originWidth=2308&size=230885&status=done&style=none&width=2308" data-src="https://cdn.nlark.com/yuque/0/2020/png/438857/1580118107411-3464e873-2694-4e5d-93d1-7f1abdc66923.png#align=left&display=inline&height=1725&name=INKBOOK.png&originHeight=1725&originWidth=2308&size=230885&status=done&style=none&width=2308"><br>阅读界面伪代码（不可运行）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">8</span></span><br><span class="line">y = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">toPage</span><span class="params">(k)</span>:</span></span><br><span class="line">    line_x = <span class="number">10</span></span><br><span class="line">    line_y = <span class="number">10</span></span><br><span class="line">    temp = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(y * k, y * k + y):</span><br><span class="line">        temp = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(x * j, x * j + x):</span><br><span class="line">            temp = temp + content[i]</span><br><span class="line">        draw.text((line_x, line_y), temp, font=font, fill=<span class="number">0</span>)</span><br><span class="line">        line_y += <span class="number">20</span></span><br><span class="line">    draw(image)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">z = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">while</span> upbutton == <span class="number">1</span>:</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        <span class="keyword">if</span> input20 == <span class="number">0</span>:</span><br><span class="line">            z = z + <span class="number">1</span></span><br><span class="line">            toPage(z)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">while</span> downbutton == <span class="number">1</span>:</span><br><span class="line">        time.sleepz(<span class="number">0.1</span>)</span><br><span class="line">        <span class="keyword">if</span> input21 == <span class="number">0</span>:</span><br><span class="line">            z = z - <span class="number">1</span></span><br><span class="line">            toPage(z)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">while</span> back == <span class="number">1</span>:</span><br><span class="line">        time.sleepz(<span class="number">0.1</span>)</span><br><span class="line">        <span class="keyword">if</span> nput22 == <span class="number">0</span>:</span><br><span class="line">            os.system(<span class="string">"python3 main.py"</span>)</span><br></pre></td></tr></table></figure>
+                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p><a name="NUd7R"></a></p>
-<p>##<br><a name="Ahqkx"></a></p>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p><a name="9dajb"></a></p>
-<h3 id="松开延迟模块"><a href="#松开延迟模块" class="headerlink" title="松开延迟模块"></a>松开延迟模块</h3><p>激活按钮时，若由为高电平时判断，则会导致按下一瞬间输出多次。<br>如上述代码Line36-39，<br>当完成低电平—高电平—低电平时时才可输出一个状态信号。<br>需延迟，可调整，易封装。</p>
-<p><a name="4c4d1"></a></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>GIthub:<a href="https://github.com/Fvhin/InkBook/releases" target="_blank" rel="noopener">https://github.com/Fvhin/InkBook/releases</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -185,15 +183,7 @@ font-family:"ys";
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="TESTA" href="/2020/01/23/yuque/ed8qa3/">
-            ← TESTA
-        </a>
-        
         <span class="prev-next-post">·</span>
-        
-        <a class="next-post" title="字体" href="/2019/08/10/yuque/nwxrrm/">
-            字体 →
-        </a>
         
     </nav>
 
@@ -218,7 +208,7 @@ font-family:"ys";
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#材料"><span class="toc-text">材料</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#硬件"><span class="toc-text">硬件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件"><span class="toc-text">软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑"><span class="toc-text">逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#松开延迟模块"><span class="toc-text">松开延迟模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -250,26 +240,8 @@ font-family:"ys";
       
       
       <li>
-        <a href="/2020/02/06/hello-world/">Hello World</a>
+        <a href="/2020/02/11/hello-world/">Hello World</a>
       </li>
-      
-      
-      
-      <li>
-        <a href="/2020/01/23/yuque/ed8qa3/">TESTA</a>
-      </li>
-      
-      
-      
-      <li>
-        <a href="/2019/08/28/yuque/klqkwd/">InkbookSpi电子书实现方案</a>
-      </li>
-      
-      
-      
-      
-      
-      
       
       
     </ul>
