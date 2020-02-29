@@ -3,8 +3,52 @@
 	<meta charset="utf-8">
 	<title>nKCiaNhfXveBFa</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-	<link rel="stylesheet" href="style.css">
+	  <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 	<style>
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 2s, fadeout 2s 2.5s;
+    animation: fadein 2s, fadeout 2s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
 	    [touch-action="none"]{ -ms-touch-action: none; touch-action: none; }
 	    [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }
 	    [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
@@ -259,7 +303,19 @@ ul {
 <script type="text/javascript"> 
     document.oncontextmenu=function(e){return false;} 
 </script>
+<script>
 
+  
+  
+document.getElementById("snackbar").innerHTML="来自"+returnCitySN.cname;
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+
+
+
+</script>
 
 
 </body></html>
