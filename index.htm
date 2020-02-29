@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+	
+
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Kafea Fvhin</title>
   <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
@@ -82,7 +84,132 @@
   </li>
 </ul>
   </div>
-  
+  <div id="snackbar" class=""></div>
 <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
 </body>
+	<style>
+	
+	#snackbar {
+	    visibility: hidden;
+	    min-width: 250px;
+	    margin-left: -125px;
+	    background-color: #333;
+	    color: #fff;
+	    text-align: center;
+	    border-radius: 2px;
+	    padding: 16px;
+	    position: fixed;
+	    z-index: 100;
+	    left: 50%;
+	    bottom: 30px;
+	    font-size: 17px;
+	}
+	
+	#snackbar.show {
+	    visibility: visible;
+	    -webkit-animation: fadein 1s, fadeout 1s 2.5s;
+	    animation: fadein 1s, fadeout 1s 2.5s;
+	}
+	
+	@-webkit-keyframes fadein {
+	    from {bottom: 0; opacity: 0;} 
+	    to {bottom: 30px; opacity: 1;}
+	}
+	
+	@keyframes fadein {
+	    from {bottom: 0; opacity: 0;}
+	    to {bottom: 30px; opacity: 1;}
+	}
+	
+	@-webkit-keyframes fadeout {
+	    from {bottom: 30px; opacity: 1;} 
+	    to {bottom: 0; opacity: 0;}
+	}
+	
+	@keyframes fadeout {
+	    from {bottom: 30px; opacity: 1;}
+	    to {bottom: 0; opacity: 0;}
+	}
+	
+	
+		    [touch-action="none"]{ -ms-touch-action: none; touch-action: none; }
+		    [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }
+		    [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
+		    [touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
+	* {
+		margin: 0;
+		padding: 0;
+		
+		/* Goin' all DOS-y */
+		-webkit-font-smoothing: none;
+	}
+	
+	body {
+		background: #111;
+		font: 16px/18px "Courier New", Courier, mono;
+		color: #fff;
+	}
+	
+	div.wrap {
+		width: 900px;
+		margin: 100px auto 0;
+	}
+	
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	
+	h1, h3 {
+		font: bold 16px/18px "Courier New", Courier, mono;
+		white-space: pre;
+		color: #999;
+	}
+		h1 b {
+			color: #ddd;
+		}
+	
+	
+	h3 b {
+		display: inline-block;
+		color: #fff;
+		width: 125px;
+	}
+	
+	h3 span {
+		color: #aaa;
+		font-style: normal;
+	}
+		h3 span.link:hover, a h3:hover span.link {
+			-webkit-animation: blink .75s linear infinite;
+			-moz-animation: blink .75s linear infinite;
+			-ms-animation: blink .75s linear infinite;
+			-o-animation: blink .75s linear infinite;
+			animation: blink .75s linear infinite;
+		}
+	
+	ul {
+		list-style: none;
+		margin-left: 30px;
+	}
+	
+	
+	
+	
+		</style>
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+  <script>
+  
+
+    
+  document.getElementById("snackbar").innerHTML="来自"+returnCitySN.cname;
+      var x = document.getElementById("snackbar")
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  
+  
+  
+  
+  </script>
+
 </html>
