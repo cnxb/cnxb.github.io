@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
 	
 
 	<meta charset="utf-8">
@@ -15,50 +13,67 @@
   
   
 </head>
-<body class="mdui-theme-layout-dark mdui-drawer-body-left">
+<body class="mdui-theme-layout-dark mdui-loaded" style="">
 
-<div class="mdui-appbar"style="background: url(https://i.loli.net/2020/02/22/yIxvqWrEGiUJwXV.jpg)!important;background-repeat: no-repeat!important;
+<div class="mdui-appbar mdui-ripple" style="
+    background: url(https://i.loli.net/2020/02/22/yIxvqWrEGiUJwXV.jpg)!important;
+    background-repeat: no-repeat!important;
     background-attachment: fixed!important;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
+    height: 520px;
 ">
 	
 	
-  <div class="mdui-toolbar">
+  <div class="mdui-toolbar" style="
+    height: 448px;
+   
+    position: relative;
+">
 	  
-
-    <a mdui-drawer="{target: '#left-drawer'}"class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-    <a href="javascript:;" class="mdui-typo-title">Kafea Fvhin</a>
-    <div class="mdui-toolbar-spacer"></div>
+<div style="
+    position: absolute;
+    bottom: 0;
+">
+    <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon" style=""><i class="mdui-icon material-icons">menu</i></a>
+    <a href="javascript:;" class="mdui-typo-title" style="">Kafea Fvhin</a>
+    <div class="mdui-toolbar-spacer"></div></div>
   </div>
-  <div class="mdui-tab" mdui-tab>
-    <a href="#tab1" class="mdui-ripple mdui-ripple-white">
+  <div class="mdui-tab" mdui-tab="" style="
+    weight: 282px;
+">
+    <a href="#tab1" class="mdui-ripple mdui-ripple-white mdui-tab-active">
       <i class="mdui-icon material-icons"><i class="mdui-icon material-icons">home</i></i>
-      <label>这是啥</label>
+      <label>什么？</label>
     </a>
     <a href="#tab2" class="mdui-ripple mdui-ripple-white">
       <i class="mdui-icon material-icons">favorite</i>
-      <label>它要做啥</label>
+      <label>愿望-目标</label>
     </a>
     <a href="#tab3" class="mdui-ripple mdui-ripple-white">
       <i class="mdui-icon material-icons">perm_contact_calendar</i>
-      <label>怎么找到它</label>
+      <label>这是唯一的吗？</label>
     </a>
   </div>
 </div>
 
 <div class="mdui-container-fluid">
-  <div class="mdui-container mdui-typo" id="tab1">
-   <br>
-   --这是什么<br>
-   --这是Kafea的个人站点。<br>
-   --Kafea?？什么玩意儿？<br>
-   --听说是个waste，看这糟糕的技术和完全没用代码量少的Repo，，只要是个正常人都不会发那么垃圾的Repo.<br>
-   --好像那玩意儿被删了，而且貌似Kafea不是人<br>
-   --。。。。。。
-   
-   
-   
+  <div class="mdui-container mdui-typo" id="tab1" style="display: none;">
+	 <br> Kafea Fvhin，今年(2020)sqrt(169)岁，<del>浙江一个四线城市的<strong>外地</strong>中学生</del>
+
+  <blockquote>
+    <p>曾经希望改变，却最终理解了改变的不可能。说？却因心迷了自我。开始反对以前的自己？
+<br>逻辑至上，历史？现在?分开。光辉的历史永不能掩盖现在的模样。
+<br>表达差劲只能自食其果。
+<br>所有文字都没有人看。
+<br>他人看来，我是废品的生产者。
+<br>说出来的，都是迟钝的，别人用滥的。
+<br>限制可以知道：无法展示即无用——
+<br>不知道，怎么证明存在？没有这个显示的资本，最终只能和那些吹牛的人为伍。</p>
+    <footer>----以前写的，生硬而中二</footer>
+  </blockquote>
+<a href="http://fvhin.k.vu/about.html">......Read More</a>
+	  
   </div>
   <div id="tab2">
   
@@ -67,8 +82,18 @@
     
   </div>
 </div>
-  <div class="mdui-drawer" id="left-drawer">
-<ul class="mdui-list" mdui-collapse="{accordion: true}">
+  <div class="mdui-drawer mdui-drawer-close" id="left-drawer"><div class="mdui-typo" style="
+    padding-left: 20px;
+">
+<img class="mdui-img-circle mdui-img-fluid" src="https://i.loli.net/2020/03/01/zCTXQMyStgao8DZ.jpg" style="
+    width: 128px;
+
+    border-top-width: 20px;
+    margin-top: 20px;
+"><h4 class="" style="
+    width: 128px;
+
+">Kafea Fvhin<br><small>Cogito ergo sum.</small></h4></div><ul class="mdui-list" mdui-collapse="{accordion: true}">
 <li class="mdui-subheader">自己的</li>
   <li class="mdui-list-item mdui-ripple">
     <i class="mdui-list-item-icon mdui-icon material-icons">library_books</i>
@@ -84,9 +109,9 @@
   </li>
 </ul>
   </div>
-  <div id="snackbar" class=""></div>
+  <div id="snackbar" class="">来自湖北省</div>
 <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
-</body>
+<script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script>document.addEventListener('LiveReloadDisconnect', function() { setTimeout(function() { window.location.reload(); }, 500); })</script>
 	<style>
 	
 	#snackbar {
@@ -212,4 +237,4 @@
   
   </script>
 
-</html>
+
