@@ -1,240 +1,421 @@
-<html><head>
+<html>
+
+
 	
+	<head>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0cab47f8ffcd056a4174ec231e8e8b4e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+				<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
 
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Kafea Fvhin</title>
-  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
-  
-  
-  
-  
-  
-  
-  
-</head>
-<body class="mdui-theme-layout-dark mdui-loaded" style="">
+		<title>Kafea Fvhin</title>
+		<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
 
-<div class="mdui-appbar mdui-ripple" style="
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+				<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+				<!-- require MetingJS -->
+				<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+				
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/cnxb/cnxb.github.io/grid.css">
+
+
+
+
+
+
+
+
+
+
+<!---->
+
+
+	<body class="mdui-theme-layout-dark	 mdui-drawer-body-left" style="transition: .8s;">
+
+
+		<div class="mdui-dialog " id="pDialog">
+
+  <div class="mdui-dialog-title">选择颜色</div>
+			<div class="pad pad-card mdui-card mdui-center">
+				<div id="wheel" class="mdui-center">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<defs>
+							<filter id="drop-shadow">
+								<feGaussianBlur in="SourceAlpha" stdDeviation="3.2" />
+								<feOffset dx="0" dy="0" result="offsetblur" />
+								<feFlood flood-color="rgba(0,0,0,1)" />
+								<feComposite in2="offsetblur" operator="in" />
+								<feMerge>
+									<feMergeNode />
+									<feMergeNode in="SourceGraphic" />
+								</feMerge>
+							</filter>
+						</defs>
+						<g class="wheel--maing"></g>
+					</svg>
+					<div class="mdl-gen-download">
+						<a id="apply" class="mdui-ripple mdui-fab mdui-color-theme-accent" mdui-tooltip="{content: '应用主题'}"><i class="mdui-icon material-icons">done</i></a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<div class="mdui-appbar mdui-ripple" style="
     background: url(https://i.loli.net/2020/02/22/yIxvqWrEGiUJwXV.jpg)!important;
     background-repeat: no-repeat!important;
     background-attachment: fixed!important;
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     height: 520px;
+	color:white
 ">
-	
-	
-  <div class="mdui-toolbar" style="
+
+
+			<div class="mdui-toolbar" style="
     height: 448px;
    
     position: relative;
 ">
-	  
-<div style="
+
+				<div style="
     position: absolute;
     bottom: 0;
 ">
-    <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon" style=""><i class="mdui-icon material-icons">menu</i></a>
-    <a href="javascript:;" class="mdui-typo-title" style="">Kafea Fvhin</a>
-    <div class="mdui-toolbar-spacer"></div></div>
-  </div>
-  <div class="mdui-tab" mdui-tab="" style="
+					<a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon" style=""><i class="mdui-icon material-icons">menu</i></a>
+					<span class="mdui-typo-title">Kafea Fvhin</span>
+					<div class="mdui-toolbar-spacer"></div>
+				</div>
+			</div>
+			<div class="mdui-tab" mdui-tab style="
     weight: 282px;
 ">
-    <a href="#tab1" class="mdui-ripple mdui-ripple-white mdui-tab-active">
-      <i class="mdui-icon material-icons"><i class="mdui-icon material-icons">home</i></i>
-      <label>什么？</label>
-    </a>
-    <a href="#tab2" class="mdui-ripple mdui-ripple-white">
-      <i class="mdui-icon material-icons">favorite</i>
-      <label>愿望-目标</label>
-    </a>
-    <a href="#tab3" class="mdui-ripple mdui-ripple-white">
-      <i class="mdui-icon material-icons">perm_contact_calendar</i>
-      <label>这是唯一的吗？</label>
-    </a>
-  </div>
-</div>
+				<a href="#tab1" class="mdui-ripple mdui-ripple-white mdui-tab-active">
+					<i class="mdui-icon material-icons"><i class="mdui-icon material-icons">home</i></i>
+					<label>HOME</label>
+				</a>
+				<a href="#tab2" class="mdui-ripple mdui-ripple-white">
+					<i class="mdui-icon material-icons">favorite</i>
+					<label>Wishes</label>
+				</a>
+				<a href="#tab3" class="mdui-ripple mdui-ripple-white">
+					<i class="mdui-icon material-icons">perm_contact_calendar</i>
+					<label>Music</label>
+				</a>
+				<a href="#tab4" class="mdui-ripple mdui-ripple-white">
+					<i class="mdui-icon material-icons">perm_contact_calendar</i>
+					<label>About</label>
+				</a>
+			</div>
+		</div>
+		<div class="">
+			
+			<div id="tab1" class="mdui-container">
+				<!-- 能力 -->
+<h2>现状</h2>
+<div class="container-fluid">
+		<div class="row">
+		    <div class="col-md-4 col-6">
+			  <p>前端</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 15%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>算法</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 45%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>PHP</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 10%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>效率</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 35%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>文笔</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 5%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>智商</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 60%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>情感</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 35%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>观念</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 98%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>数学题</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 55%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>数学</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 85%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>语文题</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 50%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>语文</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 80%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>哲学</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 80%"></div>
+			  </div>
+			</div>
+			<div class="col-md-4 col-6">
+			  <p>理性</p>
+			  <div class="process-bar">
+			    <div class="process-value" style="width: 75%"></div>
+			  </div>
+			</div>
+		  </div></div>
+		  
+		 <!--/能力 -->
+		 <!--学习 -->
+				<h2>关于学习</h2>
+				<div class="mdui-table-fluid">
+				<table class="mdui-table">
+					<thead>
+						<tr>
+							<th class=""><label class="mdui-checkbox"><input type="checkbox" disabled class="indeterminatebox"><i class="mdui-checkbox-icon"></i></label></th>
+							<th>打算做的</th>
+							<th class="mdui-table-col-numeric">详细</th>
+							<th class="mdui-table-col-numeric">已完成</th>
 
-<div class="mdui-container-fluid">
-  <div class="mdui-container mdui-typo" id="tab1" style="display: none;">
-	 <br> Kafea Fvhin，今年(2020)sqrt(169)岁，<del>浙江一个四线城市的<strong>外地</strong>中学生</del>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="">
+							<td class=""><label class="mdui-checkbox"><input type="checkbox" disabled class="indeterminatebox"><i class="mdui-checkbox-icon"></i></label></td>
+							<td>阅读</td>
+							<td class="mdui-table-col-numeric"><nobr>《1984》《美丽新世界》《百年孤独》《悲惨世界》......</nobr></td>
+							<td class="mdui-table-col-numeric">15</td>
+						</tr>
+						<tr class="">
+							<td class=""><label class="mdui-checkbox"><input type="checkbox" disabled class="indeterminatebox"><i class="mdui-checkbox-icon"></i></label></td>
+							<td>阅读数学，哲学著作</td>
+							<td class="mdui-table-col-numeric"><nobr>《几何原本》 《数理逻辑入门》 <del mdui-tooltip="{content: '有人说太深奥，考虑中'}">《纯粹理性批判》</del>......</nobr></td>
+							<td class="mdui-table-col-numeric">20</td>
+						</tr>
+						<tr class="">
+							<td class=""><label class="mdui-checkbox"><input type="checkbox" disabled class="indeterminatebox"><i class="mdui-checkbox-icon"></i></label></td>
+							<td>学习算法</td>
+							<td class="mdui-table-col-numeric"><nobr>《算法导论》《具体数学》《离散数学》</nobr></td>
+							<td class="mdui-table-col-numeric">25</td>
+						</tr>
+						<tr class="">
+							<td class=""><label class="mdui-checkbox"><input type="checkbox" disabled class="indeterminatebox"><i class="mdui-checkbox-icon"></i></label></td>
+							<td>学习基本乐理</td>
+							<td class="mdui-table-col-numeric">略</td>
+							<td class="mdui-table-col-numeric">0</td>
+						</tr>
+						<tr class="">
+							<td class=""><label class="mdui-checkbox"><input type="checkbox" disabled checked><i class="mdui-checkbox-icon"></i></label></td>
+							<td>学习基本Cpp</td>
+							<td class="mdui-table-col-numeric">略</td>
+							<td class="mdui-table-col-numeric">100</td>
+						</tr>
 
-  <blockquote>
-    <p>曾经希望改变，却最终理解了改变的不可能。说？却因心迷了自我。开始反对以前的自己？
-<br>逻辑至上，历史？现在?分开。光辉的历史永不能掩盖现在的模样。
-<br>表达差劲只能自食其果。
-<br>所有文字都没有人看。
-<br>他人看来，我是废品的生产者。
-<br>说出来的，都是迟钝的，别人用滥的。
-<br>限制可以知道：无法展示即无用——
-<br>不知道，怎么证明存在？没有这个显示的资本，最终只能和那些吹牛的人为伍。</p>
-    <footer>----以前写的，生硬而中二</footer>
-  </blockquote>
-<a href="http://fvhin.k.vu/about.html">......Read More</a>
-	  
-  </div>
-  <div id="tab2">
-  
-  </div>
-  <div id="tab3">
-    
-  </div>
-</div>
-  <div class="mdui-drawer mdui-drawer-close" id="left-drawer"><div class="mdui-typo" style="
+
+
+					</tbody>
+					<script>
+						var divs = document.getElementsByClassName("indeterminatebox");
+						for (var i = 0; i < divs.length; i++) {
+
+							divs[i].indeterminate = true;
+
+
+						}
+					</script>
+				</table>
+				</div>
+				<!--/学习 -->
+			</div>
+			<div id="tab2" class="mdui-container">
+
+			</div>
+			<div id="tab3" class="mdui-container">
+<h1>曾经的一些声音</h1>
+
+				<meting-js
+				  class="yue theme-dark"
+					server="netease"
+					type="playlist"
+					order="random"
+					id="3207526379">
+				</meting-js>
+<h1>又一次惊喜</h1>	
+			<meting-js
+			  class="yue theme-dark"
+				server="netease"
+				type="playlist"
+				order="random"
+				id="4877860006">
+			</meting-js>
+				
+			</div>
+			<div id="tab4" class="mdui-container"> 
+					<br><div style="text-align:center" class="mdui-theme-layout-dark">未完成</div>
+					
+					<div style="-webkit-filter: blur(5px); /* Chrome, Opera */
+			-moz-filter: blur(3px);
+			 -ms-filter: blur(3px);    
+			     filter: blur(3px)">
+				<br> 
+				 <div class=" mdui-card mdui-card-content">
+				<blockquote>
+					曾经希望改变，却最终理解了改变的不可能。说？却因心迷了自我。开始反对以前的自己？
+						<br>逻辑至上，历史？现在?分开。光辉的历史永不能掩盖现在的模样。
+						<br>表达差劲只能自食其果。
+						<br>所有文字都没有人看。
+						<br>他人看来，我是废品的生产者。
+						<br>说出来的，都是迟钝的，别人用滥的。
+						<br>限制可以知道：无法展示即无用——
+						<br>不知道，怎么证明存在？没有这个显示的资本，最终只能和那些吹牛的人为伍。
+					<footer>----以前写的，生硬而中二</footer>
+				</blockquote>
+				<a href="http://fvhin.k.vu/about.html">......Read More</a>
+			 </div><p class="mdui-theme-layout-dark">
+<br> Kafea Fvhin，今年(2020)sqrt(169)岁，<del>浙江一个四线城市的<strong>外地</strong>中学生</del>
+			<br>现在看来，我想您对我有所了解了，就是一个
+			<br><del><del>神经病和</del>精神病</del>
+			<br>这是一个自大的人，自恃自己不能，最终一个迷失自我的人......
+		的确，我都不知道我要干嘛，包括上面的涂涂改改。
+		而且还有受迫害妄想症。。</p></div>
+		
+		</div>
+		</div>
+
+		<div class="mdui-drawer" id="left-drawer">
+			<div class="" style="
     padding-left: 20px;
 ">
-<img class="mdui-img-circle mdui-img-fluid" src="https://i.loli.net/2020/03/01/zCTXQMyStgao8DZ.jpg" style="
+				<img class="mdui-img-circle mdui-img-fluid" src="https://i.loli.net/2020/03/01/zCTXQMyStgao8DZ.jpg" style="
     width: 128px;
 
     border-top-width: 20px;
     margin-top: 20px;
-"><h4 class="" style="
+">
+				<h4 class="" style="
     width: 128px;
 
-">Kafea Fvhin<br><small>Cogito ergo sum.</small></h4></div><ul class="mdui-list" mdui-collapse="{accordion: true}">
-<li class="mdui-subheader">自己的</li>
-  <li class="mdui-list-item mdui-ripple">
-    <i class="mdui-list-item-icon mdui-icon material-icons">library_books</i>
-    <a class="mdui-list-item-content" href="http://fvhin.k.vu">博客</a>
-  </li>
-  <li class="mdui-list-item mdui-ripple">
-    <i class="mdui-list-item-icon mdui-icon material-icons">ondemand_video</i>
-    <a class="mdui-list-item-content" href="https://space.bilibili.com/471946749">Bilibili</a>
-  </li>
-  <li class="mdui-list-item mdui-ripple">
-    <i class="mdui-list-item-icon mdui-icon material-icons">code</i>
-    <a class="mdui-list-item-content" href="https://github.com/cnxb">Github</a>
-  </li>
+">Kafea Fvhin</h4><h5>Cogito ergo sum.</h5>
+			</div>
+			<ul class="mdui-list" mdui-collapse="{accordion: true}">
+				<li class="mdui-subheader">自己的</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons">library_books</i>
+					<a class="mdui-list-item-content" href="http://fvhin.k.vu">博客</a>
+				</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons">ondemand_video</i>
+					<a class="mdui-list-item-content" href="https://space.bilibili.com/471946749">Bilibili</a>
+				</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons">code</i>
+					<a class="mdui-list-item-content" href="https://github.com/cnxb">Github</a>
+				</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons">question_answer</i>
+					<a class="mdui-list-item-content" href="https://zhihu.com/people/fvhin">知乎</a>
+				</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon mdui-icon material-icons">queue_music</i>
+					<a class="mdui-list-item-content" href="https://music.163.com/#/user/home?id=1737919732">音乐</a>
+				</li>
+
+				<li class="mdui-list-item mdui-ripple ">
+					<i class="mdui-list-item-icon fa fa-twitter fa-fw mdui-icon"></i>
+					<a class="mdui-list-item-content" href="https://twitter.com/Tjcnxb">Twitter</a>
+				</li>
+				<li class="mdui-list-item mdui-ripple">
+					<i class="mdui-list-item-icon fa fa-qq fa-fw mdui-icon"></i>
+					<a class="mdui-list-item-content" href="KNWFESSNKZFFKVSXPBHGC3CVGBKW23CWMVKTKVSTKRHEWVSFNN4FK3CWLJREKMLRKZVU4UTFKZLDKVDMKJZVC2ZRKVQXURSOKJDGWMCULBYG4TJQGVBEUVCOIVFFITSF"
+					 mdui-tooltip="{content: '请解密'}">QQ</a>
+				</li>
+				<li class="mdui-list-item">
+					
+					<a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content:'调色板 By Dffzmxj'}" mdui-dialog="{target:'#pDialog'}" >
+						<i class="mdui-icon material-icons">color_lens</i>
+					</a>
+					
+	
+					
+					
+					<!--<a class="mdui-btn mdui-btn-icon mdui-ripplet" mdui-tooltip="{content:'黑夜-白昼'}" onclick="
+					  if(document.body.className.indexOf('mdui-theme-layout-dark') != -1){  //处于黑夜
+					    document.body.className=document.body.className.replace('mdui-theme-layout-dark','');
+					  }else{
+					    document.body.className= document.body.className+' mdui-theme-layout-dark';
+					  }
+					"
+						<i class="mdui-icon material-icons">invert_colors</i>
+					</a>>-->
+					<a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content:'旧站'}" href="https://cnxb.github.io/index.htm">
+						<i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
+					</a>
+				</li>
 </ul>
   </div>
+  
+  
+  
   <div id="snackbar" class="">来自湖北省</div>
-<script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
-<script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script src="//127.0.0.1:35929/livereload.js?snipver=1"></script><script>document.addEventListener('LiveReloadDisconnect', function() { setTimeout(function() { window.location.reload(); }, 500); })</script>
-	<style>
-	
-	#snackbar {
-	    visibility: hidden;
-	    min-width: 250px;
-	    margin-left: -125px;
-	    background-color: #333;
-	    color: #fff;
-	    text-align: center;
-	    border-radius: 2px;
-	    padding: 16px;
-	    position: fixed;
-	    z-index: 100;
-	    left: 50%;
-	    bottom: 30px;
-	    font-size: 17px;
-	}
-	
-	#snackbar.show {
-	    visibility: visible;
-	    -webkit-animation: fadein 1s, fadeout 1s 2.5s;
-	    animation: fadein 1s, fadeout 1s 2.5s;
-	}
-	
-	@-webkit-keyframes fadein {
-	    from {bottom: 0; opacity: 0;} 
-	    to {bottom: 30px; opacity: 1;}
-	}
-	
-	@keyframes fadein {
-	    from {bottom: 0; opacity: 0;}
-	    to {bottom: 30px; opacity: 1;}
-	}
-	
-	@-webkit-keyframes fadeout {
-	    from {bottom: 30px; opacity: 1;} 
-	    to {bottom: 0; opacity: 0;}
-	}
-	
-	@keyframes fadeout {
-	    from {bottom: 30px; opacity: 1;}
-	    to {bottom: 0; opacity: 0;}
-	}
-	
-	
-		    [touch-action="none"]{ -ms-touch-action: none; touch-action: none; }
-		    [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }
-		    [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }
-		    [touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }
-	* {
-		margin: 0;
-		padding: 0;
-		
-		/* Goin' all DOS-y */
-		-webkit-font-smoothing: none;
-	}
-	
-	body {
-		background: #111;
-		font: 16px/18px "Courier New", Courier, mono;
-		color: #fff;
-	}
-	
-	div.wrap {
-		width: 900px;
-		margin: 100px auto 0;
-	}
-	
-	a {
-		text-decoration: none;
-		color: #fff;
-	}
-	
-	h1, h3 {
-		font: bold 16px/18px "Courier New", Courier, mono;
-		white-space: pre;
-		color: #999;
-	}
-		h1 b {
-			color: #ddd;
-		}
-	
-	
-	h3 b {
-		display: inline-block;
-		color: #fff;
-		width: 125px;
-	}
-	
-	h3 span {
-		color: #aaa;
-		font-style: normal;
-	}
-		h3 span.link:hover, a h3:hover span.link {
-			-webkit-animation: blink .75s linear infinite;
-			-moz-animation: blink .75s linear infinite;
-			-ms-animation: blink .75s linear infinite;
-			-o-animation: blink .75s linear infinite;
-			animation: blink .75s linear infinite;
-		}
-	
-	ul {
-		list-style: none;
-		margin-left: 30px;
-	}
-	
-	
-	
-	
-		</style>
-<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-  <script>
-  
-
-    
-  document.getElementById("snackbar").innerHTML="来自"+returnCitySN.cname;
-      var x = document.getElementById("snackbar")
-      x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-  
-  
-  
-  
-  </script>
 
 
+				<script src="https://cdn.jsdelivr.net/gh/DFFZMXJ/mdui-colour-pad/actions.js"></script>
+	
+		<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+		<script>
+			document.getElementById("snackbar").innerHTML="来自"+returnCitySN.cname;
+        var x = document.getElementById("snackbar")
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+</script>	
+	</body>
+</html>
